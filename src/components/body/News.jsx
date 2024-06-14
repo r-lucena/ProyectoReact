@@ -5,13 +5,13 @@ import useFetch from "../Fetch/useFetch";
 
 function News() {
   const { data, error, isLoading } = useFetch();
-  console.log(data);
+
 
   return (
     <div>
       <h1>Recomendations</h1>
 
-      {/* <CardGroup>
+      <CardGroup>
         {data &&
           data.map((game) => (
             <Card key={game.id}>
@@ -25,9 +25,9 @@ function News() {
               </Card.Footer>
             </Card>
           ))}
-     </CardGroup> */}
+     </CardGroup>
      
-      <CardGroup>
+      {/* <CardGroup>
         <Card>
           <Card.Img variant="top" src={data && data[0].background_image} />
           <Card.Body>
@@ -60,7 +60,7 @@ function News() {
             <small className="text-muted">{data && data[2].released}</small>
           </Card.Footer>
         </Card>
-      </CardGroup>
+      </CardGroup> */}
     </div>
   );
 }
