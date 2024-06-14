@@ -26,6 +26,7 @@ function News() {
             </Card>
           ))}
      </CardGroup> */}
+     
       <CardGroup>
         <Card>
           <Card.Img variant="top" src={data && data[0].background_image} />
