@@ -1,0 +1,39 @@
+.footer {
+  background-color: #fff; 
+  color: #333;
+  text-align: center; 
+  margin: 0 !important;
+  padding: 20px 0; 
+  position: relative; 
+  width: 100svw;
+  height: fit-content;
+  border: 1px solid rgb(169, 169, 169);
+}
+
+.footer-content {
+  max-width: 1000px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+.footer-nav ul {
+  list-style-type: none; 
+  padding: 0; 
+  margin: 10px 0 0 0; 
+}
+
+.footer-nav ul li {
+  display: inline; 
+  margin: 0 15px; 
+}
+
+.footer-nav ul li a {
+  color: #333; 
+  text-decoration: none; 
+  transition: color 250ms ease-in-out; 
+}
+
+.footer-nav ul li a:hover {
+  text-decoration: underline; 
+  color: #535353; 
+}
