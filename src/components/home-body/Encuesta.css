@@ -2,7 +2,7 @@
 
 
 .encuesta-container {
-    background-color:  rgba(140, 231, 95, 1);
+    background-color:  var(--fern-green);
     height: 160px;
   }
 .btn-link-pages {
@@ -14,4 +14,7 @@
 }
 .btn-link-pages:hover {
     padding: 15px;
+}
+.survey-text {
+    background-color: var(--fern-green);
 }

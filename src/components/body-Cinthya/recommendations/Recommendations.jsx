@@ -11,7 +11,7 @@ function Recommendations() {
 
   return (
     <div>
-      <h1 className="rec-title"> Recommendations</h1>
+      <h1 className="rec-title">Classic Games</h1>
 
       <CardGroup className="rec-card-group">
         {data &&

@@ -4,7 +4,7 @@ import "./Recomendaciones.css"
 const Recomendaciones = () => {
   return (
     <div className="recomendaciones-container">
-      <h2 className="recomendations-p">Recomendaciones del mes</h2>
+      <h1 className="recomendations-p">Recommendations of the month</h1>
       <div className="carousel">
         <div className="card-carousel">
           <img src="" alt="" />

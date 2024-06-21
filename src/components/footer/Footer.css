@@ -1,13 +1,12 @@
 .footer {
-  background-color: #fff; 
-  color: #333;
+  background-color: var(--fern-green); 
+  color: white;
   text-align: center; 
   margin: 0 !important;
   padding: 20px 0; 
   position: relative; 
   
   height: fit-content;
-  border: 1px solid rgb(169, 169, 169);
 }
 
 .footer-content {
@@ -28,7 +27,7 @@
 }
 
 .footer-nav ul li a {
-  color: #333; 
+  color: white; 
   text-decoration: none; 
   transition: color 250ms ease-in-out; 
 }

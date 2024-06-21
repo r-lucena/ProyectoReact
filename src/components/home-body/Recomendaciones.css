@@ -2,7 +2,7 @@
 
 
 .recomendaciones-container {
-    background-color:rgba(116, 230, 108, 1) ;
+    /* background-color: var(--fern-green) ; */
     height: 600px;
   }
 .card-carousel {
@@ -13,5 +13,10 @@
     height: 500px;
 }
 .recomendations-p {
-    background-color:  rgba(140, 231, 95, 1);
+    display: flex;
+    justify-content: left;
+    margin: 1rem;
+    padding-bottom: 0.5rem;
+    color: var(--light-green);
+    border-bottom: 1px solid var(--light-green);
 }

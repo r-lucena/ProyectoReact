@@ -10,7 +10,7 @@ function RecommendationsNoAPI({data}) {
   return (
 
      <div>
-      <h1 className="rec-title"> Recommendations</h1>
+      <h1 className="rec-title">Classic games</h1>
 
       <div className="rec-card-group">
         <CardGroup >

@@ -2,6 +2,7 @@ import Banner from "../components/home-body/banner/Banner"
 import Encuesta from "../components/home-body/Encuesta"
 import Recomendaciones from "../components/home-body/Recomendaciones"
 import Footer from "../components/footer/Footer";
+import Navbar from "../components-victor/navbar/Navbar"
 
 import "../ObjectAPI"
 import RecommendationsNoAPI from "../components/body-Cinthya/recommendations/RecommendationsNoAPI"
@@ -448,6 +449,7 @@ function Home() {
   
   return (
     <div>
+        <Navbar />
         <Banner/>
         {/* <Recommendations/> */}
         <RecommendationsNoAPI data={API}/>
