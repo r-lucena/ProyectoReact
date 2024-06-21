@@ -1,7 +1,5 @@
 @import url("./index.css");
 
-#root {
+:root{
   background-color: var(--davys-gray);
-
 }
-

@@ -1,4 +1,4 @@
-[
+const API =[
     {
         "slug": "mario",
         "name": "mario",
@@ -433,3 +433,4 @@
         ]
     }
 ]
+
