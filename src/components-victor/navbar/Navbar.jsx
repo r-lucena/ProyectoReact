@@ -19,38 +19,32 @@ const navbarDropdown = [
 ]
 
 function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-  
-    const toggleMenu = () => {
-      setIsOpen(!isOpen);
-    };
-  
-    return (
-      <nav className="navbar">
-        <div className="navbar-brand">
-          <a href="/">MyLogo</a>
-          <button className="navbar-toggle" onClick={toggleMenu}>
-            ☰
-          </button>
-        </div>
-        <ul className={`navbar-menu ${isOpen ? 'is-open' : ''}`}>
-        <li>
-      <BasicDropdown btnName={"Enlaces"} objectsArray={navbarDropdown}/>
+  const [isOpen, setIsOpen] = useState(false);
 
-    {/* <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-    </DropdownButton> */}
-
-
-          </li>
-          <li className="navbar-item"><a href="/about">About</a></li>
-          <li className="navbar-item"><a href="/services">Services</a></li>
-          <li className="navbar-item"><a href="/contact">Contact</a></li>
-        </ul>
-      </nav>
-    );
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
-  
-  export default Navbar;
+
+  return (
+    <nav className="navbar">
+      <div className="navbar-brand">
+        <a href="#"><img src="./src/assets/logos/logoSVG.svg" width={150} alt="logo" /></a>
+        <button className="navbar-toggle" onClick={toggleMenu}>
+          ☰
+        </button>
+      </div>
+      <ul className={`navbar-menu ${isOpen ? 'is-open' : ''}`}>
+        <li >
+          <BasicDropdown btnName={"Enlaces"} objectsArray={navbarDropdown} />
+        </li>
+      </ul>
+      <ul className="other-links">
+        <li className="navbar-item"><a href="/about">About</a></li>
+        <li className="navbar-item"><a href="/services">Services</a></li>
+        <li className="navbar-item"><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  );
+};
+
+export default Navbar;
