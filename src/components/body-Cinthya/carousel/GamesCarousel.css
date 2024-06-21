@@ -1,0 +1,19 @@
+
+@import url("../../../index.css");
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+.game-title{
+    display: flex;
+    justify-content: left;
+    margin: 1rem;
+    padding-bottom: 0.5rem;
+    color: var(--light-green);
+    border-bottom: 1px solid var(--light-green);
+
+}
+
