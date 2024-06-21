@@ -1,10 +1,11 @@
 import GamesCarousel from "../components/body-Cinthya/carousel/GamesCarousel"
-import News from "../components/body-Cinthya/recommendations/News"
+import Recommendations from "../components/body-Cinthya/recommendations/Recommendations"
+
 
 function Home() {
   return (
     <div>
-        <News/>
+        <Recommendations/>
         <GamesCarousel/>
     </div>
   )

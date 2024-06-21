@@ -2,26 +2,27 @@ import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import "bootstrap/dist/css/bootstrap.min.css";
 import useFetch from "../../Fetch/useFetch";
+import "./Recommendations.css"
 
-function News() {
+function Recommendations() {
   const { data, error, isLoading } = useFetch();
 
 
   return (
     <div>
-      <h1>Recommendations</h1>
+      <h1 className="rec-title"> Recommendations</h1>
 
-      <CardGroup>
+      <CardGroup className="rec-card-group">
         {data &&
           data.map((game) => (
-            <Card key={game.id}>
-              <Card.Img variant="top" src={game.background_image} />
+            <Card className="rec-card" key={game.id}>
+              <Card.Img className= "rec-img" variant="top" src={game.background_image} />
               <Card.Body>
                 <Card.Title>{game.name}</Card.Title>
-                <Card.Text>{game.reviews_text_count}</Card.Text>
+                <Card.Text>You can play in: {game.platforms.map((platform)=>(<p key={platform.id}>{platform.platform.name}</p>))}</Card.Text>
               </Card.Body>
               <Card.Footer>
-                <small className="text-muted">{game.released}</small>
+                <small className="text-muted">Release date: {game.released}</small>
               </Card.Footer>
             </Card>
           ))}
@@ -33,4 +34,4 @@ function News() {
   );
 }
 
-export default News;
+export default Recommendations;
