@@ -1,0 +1,17 @@
+@import url("../../index.css");
+
+
+.encuesta-container {
+    background-color:  rgba(140, 231, 95, 1);
+    height: 160px;
+  }
+.btn-link-pages {
+    border: none;
+    background-color: rgba(238, 232, 44, 1) ;
+    padding: 10px;
+    margin-bottom: 10px;
+    
+}
+.btn-link-pages:hover {
+    padding: 15px;
+}

@@ -1,0 +1,17 @@
+@import url("../../index.css");
+
+
+.recomendaciones-container {
+    background-color:rgba(116, 230, 108, 1) ;
+    height: 600px;
+  }
+.card-carousel {
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid black;
+    width: 350px;
+    height: 500px;
+}
+.recomendations-p {
+    background-color:  rgba(140, 231, 95, 1);
+}
