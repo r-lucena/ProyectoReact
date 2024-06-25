@@ -1,7 +1,12 @@
 
 @import url("../../../index.css");
 
+.game-div{
+    margin-bottom: 1rem;
+    height: auto;
+    padding-bottom: 1.25rem;
 
+}
 .game-title{
     display: flex;
     justify-content: left;
@@ -11,4 +16,18 @@
     border-bottom: 1px solid var(--light-green);
 
 }
+
+.carousel-indicators{
+    margin-bottom: -1.25rem;
+
+}
+
+.carousel-inner{
+    overflow: visible;
+}
+.carousel-inner div:hover, .carousel-item div img:hover {
+    transform: scale(1.1);
+   
+}
+
 
