@@ -1,6 +1,7 @@
-function CarouselImages({ text, imageUrl }) {
+function CarouselImages({ text, imageUrl, onMouseEnter,onMouseLeave }) {
+  
   return (
-    <div>
+    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <img src={imageUrl} alt={text} />
     </div>
   );
