@@ -9,10 +9,10 @@
 }
 
 .card img {
-    width: 365px; /* adjust the width to your desired size */
-    height: 210px; /* adjust the height to your desired size */
-    object-fit: cover; /* maintain the aspect ratio */
-    border-radius: 10px; /* add a slight rounded corner (optional) */
-    margin-bottom: 10px; /* add some space between the image and the text (optional) */
+    width: 365px; 
+    height: 210px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    margin-bottom: 10px; 
     
   }
