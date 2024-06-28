@@ -31,11 +31,13 @@
 .carousel-caption {
     opacity: 1;
     transition: opacity 0.5s ease;
+    padding: 0;
 }
 
 .carousel-caption-none {
     opacity: 0;
     transition: opacity 0.5s ease;
+    padding: 0;
 
 }
 
@@ -54,6 +56,7 @@
 }
 
 .game-description {
+    margin: 0;
     color: var(--aureolin);
     transition: margin 0.5s ease;
     /* Add transition for margin */

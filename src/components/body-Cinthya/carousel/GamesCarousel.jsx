@@ -48,12 +48,14 @@ function GamesCarousel() {
           randomGames.map((game) => (
             <Carousel.Item
               key={game.id}
+              onClick={() => (window.location.href = game.game_url)}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
               <CarouselImages
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
+                
                 text={game.title}
                 imageUrl={game.thumbnail}
               />
@@ -70,6 +72,9 @@ function GamesCarousel() {
             </Carousel.Item>
           ))}
       </Carousel>
+
+      {error && <p>Error:{error.message}</p>}
+      {isLoading && <p>Loading...</p>}
     </div>
   );
 }

@@ -8,6 +8,7 @@ import "../ObjectAPI"
 import RecommendationsNoAPI from "../components/body-Cinthya/recommendations/RecommendationsNoAPI"
 import GamesCarouselNoAPI from "../components/body-Cinthya/carousel/GamesCarouselNoAPI"
 import GamesCarousel from "../components/body-Cinthya/carousel/GamesCarousel";
+import Recommendations from "../components/body-Cinthya/recommendations/Recommendations";
 
 
 // const API =[
@@ -452,7 +453,7 @@ function Home() {
     <div>
         <Navbar />
         <Banner/>
-        {/* <Recommendations/> */}
+        <Recommendations/>
         {/* <RecommendationsNoAPI data={API}/> */}
         <GamesCarousel/> 
         {/* <GamesCarouselNoAPI data={API}/> */} 
