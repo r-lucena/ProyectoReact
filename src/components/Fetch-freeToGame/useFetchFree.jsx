@@ -1,6 +1,7 @@
 import useSWR from "swr";
 
-const apiKey = "ab0528e101msh81b3089060148d8p13e97cjsn9c0e28d0e6a1"; // cada uno debe poner su api key aqui
+const apiKey = "ec451c852bmsh5b9f324ff0aa41fp1b32e8jsn87d4f4065455"; // cada uno debe poner su api key aqui
+
 
 const headers = {
   "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",

@@ -1,0 +1,13 @@
+.game-cards {
+    display: grid;
+    grid-template-columns: 476px 476px 476px 474px;
+    grid-template-rows: max-content;
+}
+.recomendations-p {
+    display: flex;
+    justify-content: left;
+    margin: 1rem;
+    padding-bottom: 0.5rem;
+    color: var(--light-green);
+    border-bottom: 1px solid var(--light-green);
+}
