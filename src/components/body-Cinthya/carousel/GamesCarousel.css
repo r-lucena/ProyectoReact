@@ -1,33 +1,65 @@
-
 @import url("../../../index.css");
 
-.game-div{
+.game-div {
     margin-bottom: 1rem;
     height: auto;
     padding-bottom: 1.25rem;
 
 }
-.game-title{
+
+.game-title {
     display: flex;
     justify-content: left;
     margin: 1rem;
     padding-bottom: 0.5rem;
     color: var(--light-green);
     border-bottom: 1px solid var(--light-green);
+    transition: margin 0.5s ease;
 
 }
 
-.carousel-indicators{
+.game-title-hover {
+    display: flex;
+    justify-content: left;
+    margin: 1rem 1rem 2.25rem 1rem;
+    padding-bottom: 0.5rem;
+    color: var(--light-green);
+    border-bottom: 1px solid var(--light-green);
+    transition: margin 0.5s ease;
+}
+
+.carousel-caption {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-caption-none {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+}
+
+.carousel-indicators {
     margin-bottom: -1.25rem;
 
 }
 
-.carousel-inner{
+.carousel-inner {
     overflow: visible;
 }
-.carousel-inner div:hover, .carousel-item div img:hover {
+
+.carousel-inner div:hover,
+.carousel-item img:hover {
     transform: scale(1.1);
-   
 }
 
-
+.game-description {
+    color: var(--aureolin);
+    transition: margin 0.5s ease;
+    /* Add transition for margin */
+    text-shadow: 2px 2px 0px var(--olive),
+        /* Darker shadow for relief effect */
+        4px 4px 3px var(--ebony);
+    /* Softer shadow for depth */
+    font-size: 1.5rem;
+}

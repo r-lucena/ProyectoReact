@@ -18,6 +18,9 @@ function GamesCarouselNoAPI({data}) {
       {data && ( data.map((game)=>(
         <Carousel.Item key={game.id}>
         <CarouselImages text={game.name} imageUrl={game.background_image} />
+        <Carousel.Caption>
+          <h3>{game.name}</h3>
+        </Carousel.Caption>
       </Carousel.Item>
       ))
         
