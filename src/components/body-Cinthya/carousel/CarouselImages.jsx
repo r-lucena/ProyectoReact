@@ -1,7 +1,7 @@
-function CarouselImages({ text, imageUrl, onMouseEnter,onMouseLeave }) {
-  
+function CarouselImages({ text, imageUrl}) {
+
   return (
-    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <div className="carousel-img-wrapper">
       <img src={imageUrl} alt={text} />
     </div>
   );
@@ -9,22 +9,3 @@ function CarouselImages({ text, imageUrl, onMouseEnter,onMouseLeave }) {
 
 export default CarouselImages;
 
-
-
-
-// <Carousel.Item>
-//         <ExampleCarouselImage text="Second slide" />
-//         <Carousel.Caption>
-//           <h3>Second slide label</h3>
-//           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-//         </Carousel.Caption>
-//       </Carousel.Item>
-//       <Carousel.Item>
-//         <ExampleCarouselImage text="Third slide" />
-//         <Carousel.Caption>
-//           <h3>Third slide label</h3>
-//           <p>
-//             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-//           </p>
-//         </Carousel.Caption>
-//       </Carousel.Item>

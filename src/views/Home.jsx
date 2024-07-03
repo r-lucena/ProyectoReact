@@ -10,13 +10,13 @@ import Recommendations from "../components/body-Cinthya/recommendations/Recommen
 
 
 function Home() {
-  
+
   return (
     <div>
         <Navbar />
         <Banner/>
         <Recommendations/>
-        <GamesCarousel/> 
+        <GamesCarousel/>
         <Encuesta/>
         <GameList/>
         <Footer />

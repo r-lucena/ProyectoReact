@@ -3,6 +3,9 @@
 body{
     background-color: transparent;
 }
+.rec-div-wrapper{
+    width: 100%;
+}
 
 .rec-title{
     display: flex;
@@ -11,29 +14,30 @@ body{
     padding-bottom: 0.5rem;
     color: var(--light-green);
     border-bottom: 1px solid var(--light-green);
-    
+
 }
 
-.card-group{
+.rec-card-group{
     margin: 1rem 6rem;
-    
+
 }
 
-.card{
+.rec-card{
     background-color: var(--emerald-2);
 }
- 
-.card-title{
+
+
+.rec-card-title{
     color: white;
     font-weight: 700;
 }
 
-.card-text{
+.rec-card-text{
     color: white;
     font-size: 1rem;
 }
 
-.text-muted{
+.rec-text-muted{
     color: var(--bs-secondary-bg) !important
 }
 
@@ -41,13 +45,13 @@ body{
    display:flex;
    justify-content: center;
    padding-bottom: 1rem;
-    
+
 }
 .see-more-btn{
     border-radius: 1rem;
     background-color: var(--aureolin);
     width: 10rem;
-   
+
 }
 .see-more-btn:hover{
     background-color: var( --moss-green);

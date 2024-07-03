@@ -7,68 +7,44 @@ import "./GamesCarousel.css";
 
 function GamesCarousel() {
   const [index, setIndex] = useState(0);
-  const [randomGames, setRandomGames] = useState([]);
-  const [isHovered, setIsHovered] = useState(false);
-
-  function handleMouseEnter() {
-    setIsHovered(true);
-  }
-
-  function handleMouseLeave() {
-    setIsHovered(false);
-  }
-
+  const [newGames, setNewGames] = useState([]);
   function handleSelect(selectedIndex) {
     setIndex(selectedIndex);
-  }
-
-  function stopPropagation(event) {
-    event.stopPropagation();
   }
 
   const { data, error, isLoading } = useFetchFree();
 
   useEffect(() => {
     if (data) {
-      const selectRandomGames = (games, num) => {
-        const shuffled = games.sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, num);
-      };
-      setRandomGames(selectRandomGames(data, 3));
+      const sortedGames= data.sort((a, b)=> new Date(b.release_date) - new Date(a.release_date))
+      const threeNewestGames = sortedGames.slice(0,3)
+      setNewGames(threeNewestGames)
+
     }
+
   }, [data]);
 
+  // useEffect(() => {
+  //   if (data) {
+  //     const selectRandomGames = (games, num) => {
+  //       const shuffled = games.sort(() => 0.5 - Math.random());
+  //       return shuffled.slice(0, num);
+  //     };
+  //     setRandomGames(selectRandomGames(data, 3));
+  //   }
+  // }, [data]);
+
   return (
-    <div className="game-div">
-      <h1 className={isHovered ? "game-title-hover" : "game-title"}>
-        Enjoy your games !
-      </h1>
+    <div className="game-div-wrapper">
+      <h1 className="game-title">New released</h1>
       <Carousel activeIndex={index} onSelect={handleSelect}>
-        {randomGames &&
-          randomGames.map((game) => (
+        {newGames &&
+          newGames.map((game) => (
             <Carousel.Item
               key={game.id}
-              onClick={() => (window.location.href = game.game_url)}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              onClick={() => window.open(game.game_url)}
             >
-              <CarouselImages
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                
-                text={game.title}
-                imageUrl={game.thumbnail}
-              />
-
-              <Carousel.Caption
-                onMouseEnter={stopPropagation}
-                onMouseLeave={stopPropagation}
-                className={
-                  isHovered ? "carousel-caption" : "carousel-caption-none"
-                }
-              >
-                <p className="game-description">{game.short_description}</p>
-              </Carousel.Caption>
+              <CarouselImages text={game.title} imageUrl={game.thumbnail} />
             </Carousel.Item>
           ))}
       </Carousel>

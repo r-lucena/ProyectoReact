@@ -21,7 +21,7 @@ function Recommendations() {
   }, [data]);
 
   return (
-    <div>
+    <div className="rec-div-wrapper">
       <h1 className="rec-title">Classic Games</h1>
 
       <CardGroup className="rec-card-group">
@@ -29,19 +29,17 @@ function Recommendations() {
           randomGames.map((game) => (
             <Card className="rec-card" key={game.id}>
               <Card.Img
-                className="rec-img"
                 variant="top"
                 src={game.thumbnail}
               />
               <Card.Body>
                 <Card.Title>{game.title}</Card.Title>
                 <Card.Text>{game.short_description} </Card.Text>
-                
               </Card.Body>
               <div className="div-flex">
                   <button
                     className="see-more-btn"
-                    onClick={() => (window.location.href = game.game_url)}
+                    onClick={() => window.open(game.game_url)}
                   >
                     See more
                   </button>

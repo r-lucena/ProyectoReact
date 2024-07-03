@@ -1,6 +1,6 @@
 import useSWR from "swr";
 
-const apiKey = "ec451c852bmsh5b9f324ff0aa41fp1b32e8jsn87d4f4065455"; // cada uno debe poner su api key aqui
+const apiKey = "ab0528e101msh81b3089060148d8p13e97cjsn9c0e28d0e6a1"; // cada uno debe poner su api key aqui
 
 
 const headers = {
@@ -12,7 +12,7 @@ const fetcher = (url) =>
   fetch(url, { mode: "cors", headers })
     .then((resp) => resp.json())
     .then((response) => {
-      console.log(response); // Muestra toda la respuesta en lugar de response.results
+
       return response; // Devuelve toda la respuesta
     });
 
