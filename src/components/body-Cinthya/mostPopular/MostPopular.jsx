@@ -1,32 +1,30 @@
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Recommendations.css";
+import "./MostPopular.css";
 import "../../../ObjectAPI";
-import useFetchFree from "../../Fetch-freeToGame/useFetchFree";
-import { useEffect, useState } from "react";
 
-function Recommendations() {
-  const [randomGames, setRandomGames] = useState([]);
-  const { data, error, isLoading } = useFetchFree();
+import { useEffect, useState } from "react";
+import useFetchFreeRelevance from "../../Fetch-freeToGame/useFetchFreeRelevance";
+
+function MostPopular() {
+  const [relevantGames, setRelevantGames] = useState([]);
+  const { data, error, isLoading } = useFetchFreeRelevance();
 
   useEffect(() => {
     if (data) {
-      const selectRandomGames = (games, num) => {
-        const shuffled = games.sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, num);
-      };
-      setRandomGames(selectRandomGames(data, 4));
+      const fourRelevantGames = data.slice(0,4)
+      setRelevantGames(fourRelevantGames)
     }
   }, [data]);
 
   return (
     <div className="rec-div-wrapper">
-      <h1 className="rec-title">Classic Games</h1>
+      <h1 className="rec-title">Most popular Free-to-Play Games</h1>
 
       <CardGroup className="rec-card-group">
-        {randomGames &&
-          randomGames.map((game) => (
+        {relevantGames &&
+          relevantGames.map((game) => (
             <Card className="rec-card" key={game.id}>
               <Card.Img
                 variant="top"
@@ -59,4 +57,4 @@ function Recommendations() {
   );
 }
 
-export default Recommendations;
+export default MostPopular;

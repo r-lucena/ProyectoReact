@@ -1,3 +1,5 @@
+import "./GamesCarousel.css";
+
 function CarouselImages({ text, imageUrl}) {
 
   return (

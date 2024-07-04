@@ -3,10 +3,8 @@ import Encuesta from "../components/home-body/Encuesta"
 import GameList from "../components/home-body/GameList";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components-victor/navbar/Navbar"
-
-import "../ObjectAPI"
 import GamesCarousel from "../components/body-Cinthya/carousel/GamesCarousel";
-import Recommendations from "../components/body-Cinthya/recommendations/Recommendations";
+import MostPopular from "../components/body-Cinthya/mostPopular/MostPopular";
 
 
 function Home() {
@@ -15,7 +13,7 @@ function Home() {
     <div>
         <Navbar />
         <Banner/>
-        <Recommendations/>
+        <MostPopular/>
         <GamesCarousel/>
         <Encuesta/>
         <GameList/>
