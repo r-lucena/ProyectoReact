@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./MostPopular.css";
-import "../../../ObjectAPI";
+
 
 import { useEffect, useState } from "react";
 import useFetchFreeRelevance from "../../Fetch-freeToGame/useFetchFreeRelevance";
@@ -19,31 +19,31 @@ function MostPopular() {
   }, [data]);
 
   return (
-    <div className="rec-div-wrapper">
-      <h1 className="rec-title">Most popular Free-to-Play Games</h1>
+    <div className="most-div-wrapper">
+      <h1 className="most-title">Most popular Free-to-Play Games</h1>
 
-      <CardGroup className="rec-card-group">
+      <CardGroup className="most-card-group">
         {relevantGames &&
           relevantGames.map((game) => (
-            <Card className="rec-card" key={game.id}>
+            <Card className="most-card" key={game.id}>
               <Card.Img
                 variant="top"
                 src={game.thumbnail}
               />
               <Card.Body>
-                <Card.Title>{game.title}</Card.Title>
-                <Card.Text>{game.short_description} </Card.Text>
+                <Card.Title className="most-card-title">{game.title}</Card.Title>
+                <Card.Text className="most-card-text">{game.short_description} </Card.Text>
               </Card.Body>
-              <div className="div-flex">
+              <div className="most-div-flex">
                   <button
-                    className="see-more-btn"
+                    className="most-see-more-btn"
                     onClick={() => window.open(game.game_url)}
                   >
                     See more
                   </button>
                 </div>
               <Card.Footer>
-                <small className="text-muted">
+                <small className="most-text-muted">
                   Release date: {game.release_date}
                 </small>
               </Card.Footer>

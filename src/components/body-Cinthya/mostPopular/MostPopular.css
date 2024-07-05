@@ -3,11 +3,11 @@
 body{
     background-color: transparent;
 }
-.rec-div-wrapper{
+.most-div-wrapper{
     width: 100%;
 }
 
-.rec-title{
+.most-title{
     display: flex;
     justify-content: left;
     margin: 1rem;
@@ -17,46 +17,50 @@ body{
 
 }
 
-.rec-card-group{
+.most-card-group{
     margin: 1rem 6rem;
 
 }
 
-.rec-card{
-    background-color: var(--emerald-2);
+.most-card{
+    background-color: var(--fern-green);
+
 }
 
 
-.rec-card-title{
+.most-card-title{
     color: white;
     font-weight: 700;
 }
 
-.rec-card-text{
+.most-card-text{
     color: white;
     font-size: 1rem;
+    font-weight: 400;
 }
 
-.rec-text-muted{
-    color: var(--bs-secondary-bg) !important
-}
 
-.div-flex{
+.most-div-flex{
    display:flex;
    justify-content: center;
    padding-bottom: 1rem;
 
 }
-.see-more-btn{
-    border-radius: 1rem;
-    background-color: var(--aureolin);
-    width: 10rem;
-
+.most-see-more-btn{
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: 2px 2px 5px var(--davys-gray);
+    background-color: var(--old-gold);
+    width: 8rem;
+    height: 2rem;
+    color: var(--davys-gray);
+    font-weight: 600;
 }
-.see-more-btn:hover{
+.most-see-more-btn:hover{
     background-color: var( --moss-green);
     color: white;
-    transform: scale(1.1);
-    transition: transform 0.5s ease;
+}
+.most-text-muted{
+    color: var(--bs-secondary-bg) !important
 }
 
