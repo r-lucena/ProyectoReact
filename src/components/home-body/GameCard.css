@@ -1,0 +1,5 @@
+.game-card{
+    background-color: var(--fern-green);
+    border: 2px solid var(--davys-gray);
+    margin-bottom: 2rem;
+}

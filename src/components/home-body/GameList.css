@@ -1,8 +1,12 @@
+@import url("../../index.css");
+
 .game-cards {
     display: grid;
     grid-template-columns: 476px 476px 476px 474px;
     grid-template-rows: max-content;
+
 }
+
 .recomendations-p {
     display: flex;
     justify-content: left;
