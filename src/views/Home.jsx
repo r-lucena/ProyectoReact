@@ -1,6 +1,6 @@
 import Banner from "../components/home-body/banner/Banner"
 import Encuesta from "../components/home-body/Encuesta"
-import GameList from "../components/home-body/GameList";
+import GameSearch from "../components/home-body/GameSearch";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components-victor/navbar/Navbar"
 
@@ -457,7 +457,7 @@ function Home() {
         <GamesCarousel/> 
         {/* <GamesCarouselNoAPI data={API}/> */} 
         <Encuesta/>
-        <GameList/>
+        <GameSearch/>
         <Footer />
     </div>
   )
