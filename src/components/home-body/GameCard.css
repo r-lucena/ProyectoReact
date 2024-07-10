@@ -1,7 +1,12 @@
 
-.card-recommendation {
+.game-card-style {
   display: flex;
   align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .card-recommendation img {
   width: 100%;
@@ -16,3 +21,8 @@
     margin-bottom: 10px; /* add some space between the image and the text (optional) */
     
   }
+.game-card{
+    background-color: var(--fern-green);
+    border: 2px solid var(--davys-gray);
+    margin-bottom: 2rem;
+}

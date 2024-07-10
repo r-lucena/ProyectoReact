@@ -457,7 +457,7 @@ function Home() {
         <GamesCarousel/> 
         {/* <GamesCarouselNoAPI data={API}/> */} 
         <Encuesta/>
-        <GameSearch/>
+      
         <Footer />
     </div>
   )

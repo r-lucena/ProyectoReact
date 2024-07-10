@@ -1,7 +1,6 @@
 @import url("../../../index.css");
 
 .banner {
-    width: 1902px;
-    height: 400px;
-    margin-top: 103px;
+  width: fit-content;
+  height: fit-content;
   }

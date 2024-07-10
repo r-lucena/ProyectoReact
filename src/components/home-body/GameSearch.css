@@ -1,8 +1,15 @@
-.game-cards {
+.game-card {
     display: grid;
     grid-template-columns: 476px 476px 476px 474px;
     grid-template-rows: max-content;
+    background-color: var(--fern-green);
 }
+@media (max-width: 952px)  {
+    .game-card {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 .recomendations-p {
     display: flex;
     justify-content: left;
