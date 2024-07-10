@@ -29,9 +29,10 @@ function GameSearch() {
   }
 
   function populateDropdown(){
-    const genres = [...new Set(data.map(game => game.genre))]; // Extract unique genres
-   genres.map(genre => ({ id: genre.toLowerCase(), name: genre })); // Format genres
-   setGenres(genres);
+    const differentGenres = [...new Set(data.map(game => game.genre))]; // Extract unique genres
+
+   const filterDifferentGenres = differentGenres.map(genre => ({ item: genre, value: genre.toLowerCase() })); // Format genres
+   setGenres(filterDifferentGenres);
   }
 
   useEffect(() => {
@@ -97,6 +98,6 @@ function GameSearch() {
       </div>
     </div>
   );
-};
+}
 
 export default GameSearch;
