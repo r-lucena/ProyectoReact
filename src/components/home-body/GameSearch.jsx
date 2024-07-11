@@ -67,7 +67,7 @@ function GameSearch() {
   }
 
   useEffect(() => {
-    //** console.log('Fetched Data:', data); // Log the fetched data
+    console.log('Fetched Data:', data); // Log the fetched data
     if (data.length > 0) {
       const generateRandomGames = () => {
         const randomGames = data.sort(() => Math.random() - 0.5).slice(0, 8);
@@ -78,7 +78,7 @@ function GameSearch() {
   }, [data]);
 
   useEffect(() => {
-    //** console.log('Search Query:', searchQuery); // Log the search query
+    console.log('Search Query:', searchQuery); // Log the search query
     if (data.length > 0 && searchQuery) {
       const filteredGames = data.filter(game =>
         game.title?.toLowerCase().includes(searchQuery.toLowerCase())

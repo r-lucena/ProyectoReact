@@ -7,7 +7,6 @@ const Banner = () => {
   return (
     <div className="banner" style={{
         backgroundImage: `url(${bannerImage})`,
-        backgroundSize: 'cover',
       }}>
     </div>
    

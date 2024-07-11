@@ -1,6 +1,24 @@
 @import url("../../../index.css");
 
 .banner {
-  width: fit-content;
-  height: fit-content;
+  height: 100vh; /* Set the height to 100 viewport height */
+  background-size: cover; /* Make the background image cover the entire container */
+  background-position: center; /* Center the background image */
+  display: flex; /* Make the container a flex container */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+/* Add media queries to make the image responsive */
+
+@media only screen and (max-width: 968px) {
+  .banner {
+    height: 50vh; /* Reduce the height on smaller screens */
   }
+}
+
+@media only screen and (max-width: 480px) {
+  .banner {
+    height: 30vh; /* Reduce the height even further on very small screens */
+  }
+}
