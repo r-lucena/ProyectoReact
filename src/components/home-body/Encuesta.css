@@ -5,15 +5,19 @@
     background-color:  var(--fern-green);
     height: 160px;
   }
-.btn-link-pages {
+  .btn-link-pages {
+    border-radius: 0.75rem;
     border: none;
-    background-color: rgba(238, 232, 44, 1) ;
-    padding: 10px;
-    margin-bottom: 10px;
-    
+    box-shadow: 2px 2px 5px var(--davys-gray);
+    background-color: var(--old-gold);
+    width: 8rem;
+    height: 2rem;
+    color: var(--davys-gray);
+    font-weight: 600;
 }
-.btn-link-pages:hover {
-    padding: 15px;
+.btn-link-pages:hover{
+    background-color: var( --moss-green);
+    color: white;
 }
 .survey-text {
     background-color: var(--fern-green);

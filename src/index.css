@@ -3,19 +3,19 @@
   --light-green: rgba(91, 230, 121, 1);
   --emerald: rgba(88, 204, 113, 1);
   --emerald-2: rgba(85, 178, 105, 1);
-  --shamrock-green: rgba(83, 152, 98, 1);
-  --fern-green: rgba(80, 126, 90, 1);
+  --shamrock-green: rgba(83, 152, 98);
+  --fern-green: rgba(80, 126, 90);
   --feldgrau: rgba(77, 100, 82, 1);
   --davys-gray: rgba(74, 74, 74, 1);
 
   /* Yellow palette for details*/
-  --aureolin: rgba(238, 232, 44, 1);
+  --aureolin: rgba(238, 232, 44);
   --citrine: rgba(211, 206, 49, 1);
   --old-gold: rgba(183, 179, 54, 1);
   --moss-green: rgba(156, 153, 59, 1);
   --olive: rgba(129, 127, 64, 1);
   --ebony: rgba(101, 100, 69, 1);
-  --davys-gray: rgba(74, 74, 74, 1);
+  --davys-gray: rgba(74, 74, 74);
 
   /* Green and yellow gradient for design*/
   --light-green: rgba(91, 230, 121, 1);

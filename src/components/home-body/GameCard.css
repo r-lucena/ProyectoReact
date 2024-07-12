@@ -1,3 +1,27 @@
+
+.game-card-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.card-recommendation img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-recommendation img {
+    width: 365px; /* adjust the width to your desired size */
+    height: 210px; /* adjust the height to your desired size */
+    object-fit: cover; /* maintain the aspect ratio */
+    border-radius: 10px; /* add a slight rounded corner (optional) */
+    margin-bottom: 10px; /* add some space between the image and the text (optional) */
+
+  }
 .game-card{
     background-color: var(--fern-green);
     border: 2px solid var(--davys-gray);
