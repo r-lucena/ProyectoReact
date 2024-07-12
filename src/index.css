@@ -1,6 +1,6 @@
 :root {
   /* Green palette for components*/
-  --light-green: rgba(91, 230, 121, 1);
+  --light-green: rgb(91, 230, 121);
   --emerald: rgba(88, 204, 113, 1);
   --emerald-2: rgba(85, 178, 105, 1);
   --shamrock-green: rgba(83, 152, 98, 1);

@@ -8,6 +8,13 @@ body {
   background-color: var(--davys-gray);
 }
 
+.dropdown{
+  display: none;
+}
+
+.links{
+  display: flex;
+}
 
 .navbar {
   display: flex;
@@ -144,8 +151,16 @@ body {
     justify-content: center;
   }
 
+  .links{
+    display: none;
+  }
+
   .navbar-brand {
     gap: 1rem;
+  }
+
+  .dropdown{
+    display: block;
   }
 
   .navbar-toggle {
