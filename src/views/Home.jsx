@@ -1,11 +1,10 @@
 import Banner from "../components/home-body/banner/Banner"
 import Encuesta from "../components/home-body/Encuesta"
+import GameSearch from "../components/home-body/GameSearch";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components-victor/navbar/Navbar"
-
 import GamesCarousel from "../components/body-Cinthya/carousel/GamesCarousel";
-
-import GameSearch from "../components/home-body/GameSearch";
+import MostPopular from "../components/body-Cinthya/mostPopular/MostPopular";
 
 
 function Home() {
@@ -14,6 +13,7 @@ function Home() {
     <div>
         <Navbar />
         <Banner/>
+        <MostPopular/>
         <GamesCarousel/>
         <Encuesta/>
         <GameSearch/>

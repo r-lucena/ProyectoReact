@@ -6,8 +6,8 @@
   align-content: center;
   flex-wrap: wrap;
   flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 20px;
+padding-top: 1rem;
+  border: 2px solid var(--davys-gray);
 }
 .card-recommendation img {
   width: 100%;

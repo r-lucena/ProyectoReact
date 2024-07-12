@@ -3,7 +3,22 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: max-content;
     background-color: var(--fern-green);
+
 }
+
+.recomendations-p {
+    display: flex;
+    justify-content: left;
+    margin: 1rem;
+    padding-bottom: 0.5rem;
+    color: var(--light-green);
+    border-bottom: 1px solid var(--light-green);
+}
+
+.nogame-found {
+    width:inherit;
+}
+
 
 @media (min-width: 1px)  {
     .game-card {
@@ -25,18 +40,4 @@
     .game-card {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-}
-
-
-.recomendations-p {
-    display: flex;
-    justify-content: left;
-    margin: 1rem;
-    padding-bottom: 0.5rem;
-    color: var(--light-green);
-    border-bottom: 1px solid var(--light-green);
-}
-
-.nogame-found {
-    width:inherit;
 }

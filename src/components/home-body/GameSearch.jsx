@@ -1,85 +1,56 @@
-// import { useState, useEffect } from 'react';
-// import GameCard from './GameCard';
-// import useFetchFree from '../Fetch-freeToGame/useFetchFree'
-// import '../home-body/GameSearch.css'
-
-// function GameSearch() {
-//   const { data, error, isLoading } = useFetchFree(); // Use the custom hook
-//   const [randomGames, setRandomGames] = useState([]);
-//   const [input, setInput] = useState("")
-
-//   function handleInput(event) {
-//     console.log(event.target.value);
-//     setInput(event.target.value)
-//   }
-
-//   useEffect(() => {
-//     if (data) {
-//       const generateRandomGames = () => {
-//         const randomGames = data.sort(() => Math.random() - 0.5).slice(0, 8);
-//         setRandomGames(randomGames);
-//       };
-//       generateRandomGames();
-//     }
-//   }, [data]);
-
-
-//   if (isLoading) {
-//     return <div>Loading...</div>;
-//   }
-
-//   if (error) {
-//     return <div>Error: {error.message}</div>;
-//   }
-
-//   return (
-//     <div>
-//       <label htmlFor="game-search"><h1 className="recomendations-p">Search your games!</h1></label>
-//       <input name='game-search' type='text' placeholder='type here' onChange={handleInput} />
-//       <div className="game-cards">
-//         {input && data.map(element => (
-//           <GameCard key={element.id} game={element.title == input} />
-//         ))}
-//           {/* {data && randomGames.map(game => (
-//             <GameCard key={game.id} game={game} />
-//           ))} */}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default GameSearch;
-
 import { useState, useEffect } from 'react';
 import GameCard from './GameCard';
-import useFetchFree from '../Fetch-freeToGame/useFetchFree';
+import useFetchFree from '../../components/Fetch-freeToGame/useFetchFree';
 import '../home-body/GameSearch.css';
 import BasicDropdown from '../../components-victor/dropdown/BasicDropdown'
+
+
+// const genres = [
+//   {
+//     item: "MMORPG",
+//     value: "mmorpg"
+//   },
+//   {
+//     item: "Shooter",
+//     value: "shooter"
+//   }
+// ]
+
 
 function GameSearch() {
   const { data = [], error, isLoading } = useFetchFree(); // Ensure data is always an array
   const [randomGames, setRandomGames] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [genres, setGenres] = useState([])
 
   function handleSearchQuery(e){
     setSearchQuery(e.target.value)
   }
 
+  function populateDropdown(){
+    const differentGenres = [...new Set(data.map(game => game.genre))]; // Extract unique genres
+
+   const filterDifferentGenres = differentGenres.map(genre => ({ item: genre, value: genre.toLowerCase() })); // Format genres
+   setGenres(filterDifferentGenres);
+  }
+
   useEffect(() => {
-    console.log('Fetched Data:', data); // Log the fetched data
     if (data.length > 0) {
+      console.log('Fetched Data:', data);  // Log the fetched data
       const generateRandomGames = () => {
         const randomGames = data.sort(() => Math.random() - 0.5).slice(0, 8);
         setRandomGames(randomGames);
+        populateDropdown();
+        console.log(genres) //test
       };
       generateRandomGames();
     }
   }, [data]);
 
   useEffect(() => {
-    console.log('Search Query:', searchQuery); // Log the search query
     if (data.length > 0 && searchQuery) {
+      console.log('Search Query:', searchQuery); // Log the search query
       const filteredGames = data.filter(game =>
         game.title?.toLowerCase().includes(searchQuery.toLowerCase())
       );
@@ -109,7 +80,7 @@ function GameSearch() {
         placeholder="Search for a game..."
         className="search-input"
       />
-      {/* <BasicDropdown btnName={"Genres"} objectsArray={data.genre}/> */}
+      <BasicDropdown btnName={"Genres"} objectsArray={genres}/>
       <div className="game-card">
         {searchQuery ? (
           searchResults.length ? (
@@ -117,7 +88,7 @@ function GameSearch() {
               <GameCard key={game.id} game={game} />
             ))
           ) : (
-            <p className='nogame-found'><b>Woops! There isn't any game with that name!</b></p>
+            <div>No results found</div>
           )
         ) : (
           randomGames.map(game => (
@@ -127,6 +98,6 @@ function GameSearch() {
       </div>
     </div>
   );
-};
+}
 
 export default GameSearch;

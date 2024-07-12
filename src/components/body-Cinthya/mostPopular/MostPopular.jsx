@@ -13,7 +13,7 @@ function MostPopular() {
 
   useEffect(() => {
     if (data) {
-      const fourRelevantGames = data.slice(0,4)
+      const fourRelevantGames = data.slice(1,5)
       setRelevantGames(fourRelevantGames)
     }
   }, [data]);

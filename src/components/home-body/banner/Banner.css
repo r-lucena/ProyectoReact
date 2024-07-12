@@ -4,7 +4,7 @@
 
 .banner {
   height: 400px; /* Set the height to 100 viewport height */
-  margin-top: 105px;
+  margin-top: 104px;
   background-size: cover; /* Make the background image cover the entire container */
   background-position: center; /* Center the background image */
   display: flex; /* Make the container a flex container */
