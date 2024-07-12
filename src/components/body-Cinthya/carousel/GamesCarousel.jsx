@@ -17,9 +17,8 @@ function GamesCarousel() {
   useEffect(() => {
     if (data) {
       const sortedGames= data.sort((a, b)=> new Date(b.release_date) - new Date(a.release_date))
-      const threeNewestGames = sortedGames.slice(1,4)
+      const threeNewestGames = sortedGames.slice(0,3)
       setNewGames(threeNewestGames)
-
     }
 
   }, [data]);
