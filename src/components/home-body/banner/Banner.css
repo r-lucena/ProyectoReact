@@ -1,24 +1,31 @@
 @import url("../../../index.css");
 
+
+
 .banner {
-  height: 100vh; /* Set the height to 100 viewport height */
+  height: 400px; /* Set the height to 100 viewport height */
+  margin-top: 105px;
   background-size: cover; /* Make the background image cover the entire container */
   background-position: center; /* Center the background image */
   display: flex; /* Make the container a flex container */
   justify-content: center; /* Center the content horizontally */
   align-items: center; /* Center the content vertically */
+  background-image: url("../../../assets/Banner1200.png");
 }
 
 /* Add media queries to make the image responsive */
 
-@media only screen and (max-width: 968px) {
+@media only screen and (max-width: 1200px) {
   .banner {
-    height: 50vh; /* Reduce the height on smaller screens */
+    background-image: url("../../../assets/Banner1900.png");
+  }
+}
+@media only screen and (max-width: 700px) {
+  .banner {
+    background-image: url("../../../assets/Banner1080.png");
   }
 }
 
-@media only screen and (max-width: 480px) {
-  .banner {
-    height: 30vh; /* Reduce the height even further on very small screens */
-  }
-}
+
+
+

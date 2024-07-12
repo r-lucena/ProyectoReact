@@ -117,7 +117,7 @@ function GameSearch() {
               <GameCard key={game.id} game={game} />
             ))
           ) : (
-            <div className='nogame-found'>No results found</div>
+            <div ><p className='nogame-found'>Woops! There isn't any game with that name!</p></div>
           )
         ) : (
           randomGames.map(game => (
