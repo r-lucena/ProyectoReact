@@ -15,7 +15,7 @@
 
 /* Add media queries to make the image responsive */
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1300px) {
   .banner {
     background-image: url("../../../assets/Banner1900.png");
   }
