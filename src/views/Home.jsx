@@ -10,14 +10,16 @@ import MostPopular from "../components/body-Cinthya/mostPopular/MostPopular";
 function Home() {
 
   return (
-    <div>
-        <Navbar />
-        <Banner/>
-        <MostPopular/>
-        <GamesCarousel/>
-        <Encuesta/>
-        <GameSearch/>
-        <Footer />
+    <div className="parallax">
+
+          <Navbar />
+          <Banner/>
+          <MostPopular/>
+          <GamesCarousel/>
+          <Encuesta/>
+          <GameSearch/>
+          <Footer />
+
     </div>
   )
 }

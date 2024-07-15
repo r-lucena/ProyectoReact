@@ -1,12 +1,12 @@
 import Footer from "../components/footer/Footer";
 import Navbar from "../components-victor/navbar/Navbar"
-import SurveyForm from "../components/surveyForm/SurveyForm";
+import SurveyComponent from "../components/surveyForm/SurveyComponent";
 
 function SurveyView() {
   return (
     <div>
          <Navbar />
-          <SurveyForm/>
+          <SurveyComponent/>
          <Footer />
     </div>
   )
