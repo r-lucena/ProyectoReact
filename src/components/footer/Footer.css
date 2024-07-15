@@ -80,3 +80,14 @@ box-shadow: none;
 }
 
 
+@media (max-width: 700px) {
+.button-container{
+display: flex;
+height: auto;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+/* flex-direction: column; */
+}
+
+}
