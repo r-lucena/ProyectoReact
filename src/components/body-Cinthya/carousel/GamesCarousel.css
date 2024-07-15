@@ -60,3 +60,14 @@
   z-index: 2;
   /* Ensure it's on top of the background but below the text */
 }
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .carousel-img-wrapper img {
+    width: 25rem;
+    height: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+}
