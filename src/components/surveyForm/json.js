@@ -1,9 +1,11 @@
 export const json = {
-    "title": "House of gaming - Game survay",
+    "title": "House of gaming - Game survey",
     "description": "This survey was created to recommend you different free to play videogames depending on your answers.",
-    "logo": "https://api.surveyjs.io/private/Surveys/files?name=5c14f473-1526-4395-a6bc-9934cb0911f7",
+    "logo": "https://api.surveyjs.io/private/Surveys/files?name=83280c0e-46fe-47db-9881-cd075b577ed9",
+    "logoWidth": "500px",
+    "logoHeight": "300px",
     "logoPosition": "right",
-    "completedHtml": "<h3>Thank you for completing the survey, we are selecting the proper free to play videogames for you...</h3>",
+    "completedHtml": "<h3>Thank you for completing the survey, we are selecting the right free to play video games for you...</h3>",
     "pages": [
      {
       "name": "page1",
@@ -115,6 +117,5 @@ export const json = {
        }
       ]
      }
-    ],
-    "showPageNumbers": true
+    ]
    }

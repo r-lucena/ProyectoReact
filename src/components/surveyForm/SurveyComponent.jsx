@@ -12,7 +12,7 @@ function SurveyComponent() {
     console.log(JSON.stringify(sender.data, null, 3));
   });
   return (
-    <div>
+    <div className="survey-wrapper">
       <Survey model={survey} />
     </div>
   );

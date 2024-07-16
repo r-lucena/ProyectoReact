@@ -1,7 +1,7 @@
 import Home from "./views/Home";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SurveyComponent from "./components/surveyForm/SurveyComponent";
+import SurveyView from "./views/SurveyView";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/survey" element={<SurveyComponent />} />
+          <Route path="/survey" element={<SurveyView />} />
         </Routes>
       </BrowserRouter>
     </>

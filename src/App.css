@@ -1,12 +1,12 @@
 @import url("./index.css");
-
+/*
 #root {
   background-color: transparent;
   text-align: center;
 
-}
+} */
 
-.parallax {
+#root {
   /* The image used */
   background-image: url('./assets/background/background.jpg'); /* Replace with your image path */
 
