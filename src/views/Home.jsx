@@ -2,6 +2,7 @@ import Banner from "../components/home-body/banner/Banner"
 import Encuesta from "../components/home-body/Encuesta"
 import Footer from "../components/footer/Footer";
 import Navbar from "../components-victor/navbar/Navbar"
+import { Container , Row } from "react-bootstrap"
 
 import "../ObjectAPI"
 import GamesCarousel from "../components/body-Cinthya/carousel/GamesCarousel";
@@ -13,8 +14,14 @@ function Home() {
   
   return (
     <div>
+        <Container fluid>
+      <Row>
         <Navbar />
-        <Banner/>
+      </Row>
+      <Row>
+        <Banner />
+      </Row>
+    </Container>
         <GamesCarousel/> 
         <Encuesta/>
         <GameSearch/>

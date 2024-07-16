@@ -1,9 +1,11 @@
 .game-card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: max-content;
-    background-color: var(--fern-green);
+    grid-template-rows:  max-content;
+    border-radius: 20px;
+    
 }
+
 
 @media (min-width: 1px)  {
     .game-card {
