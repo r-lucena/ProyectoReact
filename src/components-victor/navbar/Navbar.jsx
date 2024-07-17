@@ -31,7 +31,9 @@ function Navbar() {
         <div className="navbar-brand">
           <a href="#"><img src="./src/assets/logos/logoSVG.svg" width={150} alt="logo" /></a>
         </div>
-        <BasicDropdown className="dropdown" btnName={"Links"} objectsArray={navbarDropdown} />
+        <div className="navbar-dropdown">
+        <BasicDropdown btnName={"Links"} objectsArray={navbarDropdown} />
+        </div>
         <div className='links'>
           <li className="navbar-item"><a href="/">Home</a></li>
           <li className="navbar-item"><a href="/game-finder">Game finder</a></li>
