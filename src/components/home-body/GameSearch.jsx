@@ -13,7 +13,6 @@ function GameSearch() {
   const [page, setPage] = useState(0);
   const [numOfPages, setNumOfPages] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("");
-  const [filteredGamesByGenre, setFilteredGamesByGenre] = useState([]);
 
   function handleSearchQuery(e) {
     setSearchQuery(e.target.value);
@@ -49,15 +48,21 @@ function GameSearch() {
     console.log(selectedGenre);
   }
 
-  useEffect(() => {
-    if (selectedGenre) {
-      const gamesFilteredByGenre = data.filter(
-        (game) => game.genre === selectedGenre
-      );
-      setFilteredGamesByGenre(gamesFilteredByGenre);
-    }
-    console.log("Filtered Games:", filteredGamesByGenre);
-  }, [selectedGenre, data]);
+  function handleReset(){
+    setSelectedGenre("");
+    setSearchQuery("");
+  }
+
+  // useEffect(() => {
+  //   if (selectedGenre) {
+  //     const gamesFilteredByGenre = data.filter(
+  //       (game) => game.genre === selectedGenre
+  //     );
+  //     setFilteredGamesByGenre(gamesFilteredByGenre);
+  //   }
+  //   console.log("Filtered Games:", filteredGamesByGenre);
+  // }, [selectedGenre, data]);
+
 
   function divideArrayInParts(array, partSize) {
     let result = [];
@@ -69,24 +74,29 @@ function GameSearch() {
   }
 
   useEffect(() => {
+    let filteredGames = [];
     if (searchQuery) {
       console.log("Search Query:", searchQuery); // Log the search query
-      const filteredGames = data.filter((game) =>
+      filteredGames = data.filter((game) =>
         game.title?.toLowerCase().includes(searchQuery.toLowerCase())
       );
       console.log("Filtered Games:", filteredGames); // Log the filtered results
-
-      const pagination = divideArrayInParts(filteredGames, 12);
-      setSearchResults(pagination);
-
-      const arrayOfPages = Array.from(
-        { length: pagination.length },
-        (_, i) => i
-      );
-      setNumOfPages(arrayOfPages);
-      setPage(0); // Reset to the first page on new search
+    } else if (selectedGenre) {
+      filteredGames = data.filter(
+        (game) => game.genre === selectedGenre
+      )
     }
-  }, [searchQuery, data]); // Depende de searchQuery y data
+    const pagination = divideArrayInParts(filteredGames, 12);
+    setSearchResults(pagination);
+
+    const arrayOfPages = Array.from(
+      { length: pagination.length },
+      (_, i) => i
+    );
+    setNumOfPages(arrayOfPages);
+    setPage(0); // Reset to the first page on new search
+
+  }, [searchQuery, selectedGenre, data]); // Depende de searchQuery y data
 
   useEffect(() => {
     console.log(genres);
@@ -124,8 +134,9 @@ function GameSearch() {
           handleOnClick={handleDropdown}
         />
       ) : null}
+      <button onClick={handleReset}>Reset</button>
       <div className="game-card">
-        {searchQuery ? (
+        {searchQuery || selectedGenre ? (
           searchResults.length ? (
             searchResults[page].map((game) => (
               <GameCard key={game.id} game={game} />
@@ -133,19 +144,12 @@ function GameSearch() {
           ) : (
             <div>No results found</div>
           )
-        ) : selectedGenre ? (
-          filteredGamesByGenre.length ? (
-            filteredGamesByGenre.map((game) => (
-              <GameCard key={game.id} game={game} />
-            ))
-          ) : (
-            <div>No results found</div>
-          )
         ) : (
           randomGames.map((game) => <GameCard key={game.id} game={game} />)
-        )}
+        )
+        }
 
-        {searchQuery && numOfPages.map((page, index) => {
+        {numOfPages.map((page, index) => {
           return (
             <button onClick={handlePage} key={index}>
               {page}
