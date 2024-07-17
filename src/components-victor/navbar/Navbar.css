@@ -8,7 +8,7 @@ body {
   background-color: var(--davys-gray);
 }
 
-.dropdown{
+.navbar-dropdown{
   display: none;
 }
 
@@ -159,7 +159,7 @@ body {
     gap: 1rem;
   }
 
-  .dropdown{
+  .navbar-dropdown{
     display: block;
   }
 
