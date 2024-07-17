@@ -18,24 +18,21 @@ function GameSearch() {
     setSearchQuery(e.target.value);
   }
 
-  function populateDropdown() {
-    const differentGenres = [...new Set(data.map((game) => game.genre))]; // Extract unique genres
-
-    const filterDifferentGenres = differentGenres.map((genre) => ({
-      item: genre,
-      value: genre.toLowerCase(),
-    })); // Format genres
-    setGenres(filterDifferentGenres);
-  }
-
   useEffect(() => {
     if (data.length > 0) {
       console.log("Fetched Data:", data); // Log the fetched data
       const generateRandomGames = () => {
         const randomGames = data.sort(() => Math.random() - 0.5).slice(0, 12);
         setRandomGames(randomGames);
-        populateDropdown();
-        console.log(genres); //test
+
+        const differentGenres = [...new Set(data.map((game) => game.genre))]; // Extract unique genres
+
+        const filterDifferentGenres = differentGenres.map((genre) => ({
+          item: genre,
+          value: genre.toLowerCase(),
+        })); // Format genres
+        setGenres(filterDifferentGenres);
+        console.log("Genres:", filterDifferentGenres); // Verifica el contenido de genres
       };
       generateRandomGames();
     }
@@ -51,7 +48,7 @@ function GameSearch() {
   }
 
   useEffect(() => {
-    if (data.length > 0 && searchQuery) {
+    if (searchQuery) {
       console.log("Search Query:", searchQuery); // Log the search query
       const filteredGames = data.filter((game) =>
         game.title?.toLowerCase().includes(searchQuery.toLowerCase())
@@ -59,20 +56,13 @@ function GameSearch() {
       console.log("Filtered Games:", filteredGames); // Log the filtered results
 
       const pagination = divideArrayInParts(filteredGames, 12);
-
-      let arrayOfPages = [];
-      for (let i = 0; i < pagination.length; i++) {
-        arrayOfPages.push(i);
-      }
-
-      setNumOfPages(arrayOfPages);
-
       setSearchResults(pagination);
-    } else {
-      setSearchResults([]);
-    }
-  }, [searchQuery, data]);
 
+      const arrayOfPages = Array.from({ length: pagination.length }, (_, i) => i);
+      setNumOfPages(arrayOfPages);
+      setPage(0); // Reset to the first page on new search
+    }
+  }, [searchQuery, data]); // Depende de searchQuery y data
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -97,7 +87,9 @@ function GameSearch() {
         placeholder="Search for a game..."
         className="search-input"
       />
+
       <BasicDropdown btnName={"Genres"} objectsArray={genres} />
+
       <div className="game-card">
         {searchQuery ? (
           searchResults.length ? (

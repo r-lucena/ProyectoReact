@@ -1,7 +1,20 @@
 @import url("./index.css");
-
+/*
 #root {
-  background-color: var(--davys-gray);
+  background-color: transparent;
   text-align: center;
 
+} */
+
+#root {
+  /* The image used */
+  background-image: url('./assets/background/background.jpg'); /* Replace with your image path */
+
+  /* Create the parallax scrolling effect */
+  background-attachment:fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+

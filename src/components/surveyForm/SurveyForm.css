@@ -1,5 +1,16 @@
 @import url("../../index.css");
 
-.survey-wrapper{
-    margin-top: 104px;
+.survey-wrapper {
+    margin-top:104px;
+}
+
+.sd-selectbase{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 1.5rem;
+}
+
+.sd-root-modern__wrapper{
+    padding-bottom: 4rem;
 }

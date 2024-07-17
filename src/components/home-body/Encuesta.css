@@ -4,7 +4,10 @@
 .encuesta-container {
     background-color:  var(--fern-green);
     height: 160px;
+    text-align: center;
+    padding-top: 1rem;
   }
+
   .btn-link-pages {
     border-radius: 0.75rem;
     border: none;
