@@ -17,27 +17,27 @@ function GameSearch() {
   function handleSearchQuery(e) {
     setSearchQuery(e.target.value);
   }
+  function generateRandomGames() {
+    const randomGames = data.sort(() => Math.random() - 0.5).slice(0, 12);
+    setRandomGames(randomGames);
+  }
 
+  function populateDropdown() {
+    if (data.length > 0) {
+      const differentGenres = [...new Set(data.map((game) => game.genre))]; // Extraer géneros únicos
+
+      const filterDifferentGenres = differentGenres.map((genre) => ({
+        item: genre,
+        value: genre.toLowerCase(),
+      })); // Formatear géneros
+
+      setGenres(filterDifferentGenres);
+    }
+  }
   useEffect(() => {
     if (data.length > 0) {
       console.log("Fetched Data:", data); // Log the fetched data
-      function generateRandomGames() {
-        const randomGames = data.sort(() => Math.random() - 0.5).slice(0, 12);
-        setRandomGames(randomGames);
-      }
 
-      function populateDropdown() {
-        if (data.length > 0) {
-          const differentGenres = [...new Set(data.map((game) => game.genre))]; // Extraer géneros únicos
-
-          const filterDifferentGenres = differentGenres.map((genre) => ({
-            item: genre,
-            value: genre.toLowerCase(),
-          })); // Formatear géneros
-
-          setGenres(filterDifferentGenres);
-        }
-      }
       generateRandomGames();
       populateDropdown();
     }

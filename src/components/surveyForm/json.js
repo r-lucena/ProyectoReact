@@ -16,19 +16,19 @@ export const json = {
         "title": "How often do you play video games?",
         "choices": [
          {
-          "value": "Item 1",
+          "value": "Daily",
           "text": "Daily"
          },
          {
-          "value": "Item 2",
+          "value": "Twice a week",
           "text": "Twice a week"
          },
          {
-          "value": "Item 3",
+          "value": "On the weekend",
           "text": "On the weekend"
          },
          {
-          "value": "Item 4",
+          "value": "On holidays",
           "text": "On holidays"
          }
         ]
@@ -40,20 +40,20 @@ export const json = {
       "elements": [
        {
         "type": "tagbox",
-        "name": "question2",
+        "name": "genre",
         "title": "Select your favorite game's genre",
         "isRequired": true,
         "choices": [
          {
-          "value": "Item 1",
+          "value": "Shooter",
           "text": "Shooter"
          },
          {
-          "value": "Item 2",
+          "value": "MOBA",
           "text": "MOBA"
          },
          {
-          "value": "Item 3",
+          "value": "Racing",
           "text": "Racing"
          }
         ]
@@ -70,11 +70,11 @@ export const json = {
         "isRequired": true,
         "choices": [
          {
-          "value": "Item 1",
+          "value": "Web Browser",
           "text": "Web browser"
          },
          {
-          "value": "Item 2",
+          "value": "PC (Windows)",
           "text": "PC download"
          }
         ]
@@ -102,15 +102,15 @@ export const json = {
         "isRequired": true,
         "choices": [
          {
-          "value": "Item 1No preference",
+          "value": "Old games",
           "text": "Old games"
          },
          {
-          "value": "Item 2",
+          "value": "New games",
           "text": "New games"
          },
          {
-          "value": "Item 3",
+          "value": "No preference",
           "text": "No preference"
          }
         ]
