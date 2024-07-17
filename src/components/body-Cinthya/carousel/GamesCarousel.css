@@ -5,6 +5,10 @@
   margin-bottom: 3rem;
 }
 
+.div-carousel-slide{
+  text-align: center;
+}
+
 .game-title {
   display: flex;
   justify-content: left;

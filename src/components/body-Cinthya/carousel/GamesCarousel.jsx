@@ -27,7 +27,7 @@ function GamesCarousel() {
   return (
     <div className="game-div-wrapper">
       <h1 className="game-title">New releases</h1>
-      <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel className="div-carousel-slide" activeIndex={index} onSelect={handleSelect}>
         {newGames &&
           newGames.map((game) => (
             <Carousel.Item className="carousel-item-custom"
