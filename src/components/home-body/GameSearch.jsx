@@ -48,7 +48,7 @@ function GameSearch() {
     console.log(selectedGenre);
   }
 
-  function handleReset(){
+  function handleReset() {
     setSelectedGenre("");
     setSearchQuery("");
   }
@@ -62,7 +62,6 @@ function GameSearch() {
   //   }
   //   console.log("Filtered Games:", filteredGamesByGenre);
   // }, [selectedGenre, data]);
-
 
   function divideArrayInParts(array, partSize) {
     let result = [];
@@ -82,20 +81,14 @@ function GameSearch() {
       );
       console.log("Filtered Games:", filteredGames); // Log the filtered results
     } else if (selectedGenre) {
-      filteredGames = data.filter(
-        (game) => game.genre === selectedGenre
-      )
+      filteredGames = data.filter((game) => game.genre === selectedGenre);
     }
     const pagination = divideArrayInParts(filteredGames, 12);
     setSearchResults(pagination);
 
-    const arrayOfPages = Array.from(
-      { length: pagination.length },
-      (_, i) => i
-    );
+    const arrayOfPages = Array.from({ length: pagination.length }, (_, i) => i);
     setNumOfPages(arrayOfPages);
     setPage(0); // Reset to the first page on new search
-
   }, [searchQuery, selectedGenre, data]); // Depende de searchQuery y data
 
   useEffect(() => {
@@ -120,22 +113,28 @@ function GameSearch() {
         <label htmlFor="game-search">
           <h1 className="search-title">Search your games!</h1>
         </label>
-        <input
-          id="game-search"
-          type="text"
-          value={searchQuery}
-          onChange={handleSearchQuery}
-          placeholder="Search for a game..."
-          className="search-input"
-        />
-        {genres.length ? (
-          <BasicDropdown
-            btnName={"Genres"}
-            objectsArray={genres}
-            handleOnClick={handleDropdown}
+
+        <div className="funtionalities-wrapper">
+          <input
+            id="game-search"
+            type="text"
+            value={searchQuery}
+            onChange={handleSearchQuery}
+            placeholder="Search for a game..."
+            className="search-input"
           />
-        ) : null}
-        <button  className="reset-button" onClick={handleReset}>Reset</button>
+
+          {genres.length ? (
+            <BasicDropdown
+              btnName={"Genres"}
+              objectsArray={genres}
+              handleOnClick={handleDropdown}
+            />
+          ) : null}
+          <button className="reset-button" onClick={handleReset}>
+            Reset
+          </button>
+        </div>
       </div>
       <div className="game-card">
         {searchQuery || selectedGenre ? (
@@ -148,16 +147,16 @@ function GameSearch() {
           )
         ) : (
           randomGames.map((game) => <GameCard key={game.id} game={game} />)
-        )
-        }
-
+        )}
+      </div>
+      <div className="page-btn-wrapper">
         {numOfPages.map((page, index) => {
-          return (
-            <button onClick={handlePage} key={index}>
-              {page}
-            </button>
-          );
-        })}
+            return (
+                <button className="page-btn" onClick={handlePage} key={index} >
+                  {page}
+                </button>
+            );
+          })}
       </div>
     </div>
   );

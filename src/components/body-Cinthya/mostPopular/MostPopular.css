@@ -74,9 +74,16 @@
 
 /* Tablet view */
 @media (max-width: 1010px) {
+    .most-title {
+        display: flex;
+        justify-content: center;
+    }
+
     .most-card-group {
         gap: 1rem;
     }
+
+
 
     .most-card {
         flex: 1 1 calc(45% - 2rem) !important; /* 2 columns */
@@ -87,6 +94,10 @@
 
 /* Mobile view */
 @media (max-width: 576px) {
+    .most-title {
+        display: flex;
+        justify-content: center;
+    }
     .most-card-group {
         gap: 0.5rem;
     }

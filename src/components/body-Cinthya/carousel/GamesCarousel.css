@@ -65,6 +65,15 @@
   /* Ensure it's on top of the background but below the text */
 }
 
+
+/* Tablet view */
+@media (max-width: 850px) {
+  .game-title {
+    justify-content: center;
+  }
+
+}
+
 /* Mobile view */
 @media (max-width: 576px) {
   .carousel-img-wrapper img {
@@ -72,6 +81,10 @@
     height: auto;
     position: relative;
     z-index: 2;
+  }
+
+  .game-title {
+    justify-content: center;
   }
 
 }
