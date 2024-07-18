@@ -10,13 +10,9 @@
   background-color: var(--fern-green);
   width: 400px;
   margin: 20px
-  
+
 }
 .game-card-style img {
   margin: 20px
-}
-.game-card{
-  background-color: var(--davys-gray);
-    
 }
 

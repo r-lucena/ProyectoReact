@@ -135,7 +135,7 @@ function GameSearch() {
             handleOnClick={handleDropdown}
           />
         ) : null}
-        <button onClick={handleReset}>Reset</button>
+        <button  className="reset-button" onClick={handleReset}>Reset</button>
       </div>
       <div className="game-card">
         {searchQuery || selectedGenre ? (
@@ -144,7 +144,7 @@ function GameSearch() {
               <GameCard key={game.id} game={game} />
             ))
           ) : (
-            <div>No results found</div>
+            <div className="no-found">No results found</div>
           )
         ) : (
           randomGames.map((game) => <GameCard key={game.id} game={game} />)
