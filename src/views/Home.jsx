@@ -5,7 +5,6 @@ import Footer from "../components/footer/Footer";
 import Navbar from "../components-victor/navbar/Navbar"
 import { Container , Row } from "react-bootstrap"
 
-import "../ObjectAPI"
 import GamesCarousel from "../components/body-Cinthya/carousel/GamesCarousel";
 import MostPopular from "../components/body-Cinthya/mostPopular/MostPopular";
 
@@ -22,7 +21,8 @@ function Home() {
         <Banner />
       </Row>
     </Container>
-        <GamesCarousel/> 
+        <MostPopular/>
+        <GamesCarousel/>
         <Encuesta/>
         <GameSearch/>
         <Footer />
