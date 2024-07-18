@@ -118,7 +118,7 @@ function GameSearch() {
     <div>
       <div className="search-wrapper">
         <label htmlFor="game-search">
-          <h1 className="recomendations-p">Search your games!</h1>
+          <h1 className="search-title">Search your games!</h1>
         </label>
         <input
           id="game-search"
