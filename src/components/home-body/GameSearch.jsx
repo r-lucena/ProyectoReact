@@ -17,6 +17,21 @@ function GameSearch() {
   function handleSearchQuery(e) {
     setSearchQuery(e.target.value);
   }
+
+  function handleDropdown(e) {
+    setSelectedGenre(e.target.innerText);
+    console.log(selectedGenre);
+  }
+
+  function handleReset() {
+    setSelectedGenre("");
+    setSearchQuery("");
+  }
+
+  function handlePage(event) {
+    setPage(Number(event.target.innerText)-1);
+  }
+
   function generateRandomGames() {
     const randomGames = data.sort(() => Math.random() - 0.5).slice(0, 12);
     setRandomGames(randomGames);
@@ -43,15 +58,6 @@ function GameSearch() {
     }
   }, [data]);
 
-  function handleDropdown(e) {
-    setSelectedGenre(e.target.innerText);
-    console.log(selectedGenre);
-  }
-
-  function handleReset() {
-    setSelectedGenre("");
-    setSearchQuery("");
-  }
 
   // useEffect(() => {
   //   if (selectedGenre) {
@@ -86,7 +92,7 @@ function GameSearch() {
     const pagination = divideArrayInParts(filteredGames, 12);
     setSearchResults(pagination);
 
-    const arrayOfPages = Array.from({ length: pagination.length }, (_, i) => i);
+    const arrayOfPages = Array.from({ length: pagination.length}, (_, i) => i+1);
     setNumOfPages(arrayOfPages);
     setPage(0); // Reset to the first page on new search
   }, [searchQuery, selectedGenre, data]); // Depende de searchQuery y data
@@ -103,9 +109,7 @@ function GameSearch() {
     return <div>Error: {error.message}</div>;
   }
 
-  function handlePage(event) {
-    setPage(Number(event.target.innerText));
-  }
+
 
   return (
     <div>
