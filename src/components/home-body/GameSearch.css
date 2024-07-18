@@ -1,22 +1,9 @@
 .game-card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: max-content;
-    background-color: var(--fern-green);
-
-}
-
-.recomendations-p {
-    display: flex;
-    justify-content: left;
-    margin: 1rem;
-    padding-bottom: 0.5rem;
-    color: var(--light-green);
-    border-bottom: 1px solid var(--light-green);
-}
-
-.nogame-found {
-    width:inherit;
+    grid-template-rows:  max-content;
+    border-radius: 20px;
+    
 }
 
 
