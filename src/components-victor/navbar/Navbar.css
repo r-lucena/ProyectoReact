@@ -94,45 +94,7 @@ body {
 
 
 
-.btn,
-.btn-primary {
-  background-color: var(--shamrock-green);
-  color: white;
-  outline-color: none;
-  border: var(--bs-btn-border-width) solid var(--emerald);
-}
 
-.btn:hover,
-.btn-primary:hover {
-  background-color: var(--fern-green);
-  border: var(--bs-btn-border-width) solid var(--fern-green);
-}
-
-.btn:active,
-.btn-primary:active {
-  --bs-btn-active-bg: var(--shamrock-green);
-  --bs-btn-active-border-color: var(--emerald);
-  outline-color: none;
-}
-
-
-.btn-primary,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary:hover {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-.btn-check:checked+.btn,
-.btn.active,
-.btn.show,
-.btn:first-child:active,
-:not(.btn-check)+.btn:active {
-  --bs-btn-active-bg: var(--shamrock-green);
-  --bs-btn-active-border-color: var(--emerald);
-  outline-color: none;
-}
 
 .navbar-item a {
   color: #fff;
