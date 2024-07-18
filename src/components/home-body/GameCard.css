@@ -16,7 +16,20 @@
   margin: 20px
 }
 .game-card{
-  background-color: var(--davys-gray);
+  background-color: transparent;
     
+}
+.card-img {
+  width: 365px;
+  height: 206px;
+  display: flex;
+  justify-content: center;
+}
+.card-title {
+  display: flex;
+  justify-content: center;
+}
+.card-texts {
+  margin: 10px;
 }
 
