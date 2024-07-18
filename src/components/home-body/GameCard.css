@@ -6,24 +6,17 @@
   align-content: center;
   flex-wrap: wrap;
   flex-direction: column;
-padding-top: 1rem;
-  border: 2px solid var(--davys-gray);
+  border-radius: 15px;
+  background-color: var(--fern-green);
+  width: 400px;
+  margin: 20px
+  
 }
-.card-recommendation img {
-  width: 100%;
-  height: 100%;
+.game-card-style img {
+  margin: 20px
 }
-
-.card-recommendation img {
-    width: 365px; /* adjust the width to your desired size */
-    height: 210px; /* adjust the height to your desired size */
-    object-fit: cover; /* maintain the aspect ratio */
-    border-radius: 10px; /* add a slight rounded corner (optional) */
-    margin-bottom: 10px; /* add some space between the image and the text (optional) */
-
-  }
 .game-card{
-    background-color: var(--fern-green);
-    border: 2px solid var(--davys-gray);
-    margin-bottom: 2rem;
+  background-color: var(--davys-gray);
+    
 }
+

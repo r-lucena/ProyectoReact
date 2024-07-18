@@ -3,6 +3,9 @@ import Encuesta from "../components/home-body/Encuesta"
 import GameSearch from "../components/home-body/GameSearch";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components-victor/navbar/Navbar"
+import { Container , Row } from "react-bootstrap"
+
+import "../ObjectAPI"
 import GamesCarousel from "../components/body-Cinthya/carousel/GamesCarousel";
 import MostPopular from "../components/body-Cinthya/mostPopular/MostPopular";
 
@@ -10,16 +13,19 @@ import MostPopular from "../components/body-Cinthya/mostPopular/MostPopular";
 function Home() {
 
   return (
-    <div className="parallax">
-
-          <Navbar />
-          <Banner/>
-          <MostPopular/>
-          <GamesCarousel/>
-          <Encuesta/>
-          <GameSearch/>
-          <Footer />
-
+    <div>
+        <Container fluid>
+      <Row>
+        <Navbar />
+      </Row>
+      <Row>
+        <Banner />
+      </Row>
+    </Container>
+        <GamesCarousel/> 
+        <Encuesta/>
+        <GameSearch/>
+        <Footer />
     </div>
   )
 }
