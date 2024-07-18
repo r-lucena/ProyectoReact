@@ -116,25 +116,27 @@ function GameSearch() {
 
   return (
     <div>
-      <label htmlFor="game-search">
-        <h1 className="recomendations-p">Search your games!</h1>
-      </label>
-      <input
-        id="game-search"
-        type="text"
-        value={searchQuery}
-        onChange={handleSearchQuery}
-        placeholder="Search for a game..."
-        className="search-input"
-      />
-      {genres.length ? (
-        <BasicDropdown
-          btnName={"Genres"}
-          objectsArray={genres}
-          handleOnClick={handleDropdown}
+      <div className="search-wrapper">
+        <label htmlFor="game-search">
+          <h1 className="recomendations-p">Search your games!</h1>
+        </label>
+        <input
+          id="game-search"
+          type="text"
+          value={searchQuery}
+          onChange={handleSearchQuery}
+          placeholder="Search for a game..."
+          className="search-input"
         />
-      ) : null}
-      <button onClick={handleReset}>Reset</button>
+        {genres.length ? (
+          <BasicDropdown
+            btnName={"Genres"}
+            objectsArray={genres}
+            handleOnClick={handleDropdown}
+          />
+        ) : null}
+        <button onClick={handleReset}>Reset</button>
+      </div>
       <div className="game-card">
         {searchQuery || selectedGenre ? (
           searchResults.length ? (
