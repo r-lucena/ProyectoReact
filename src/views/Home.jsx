@@ -13,14 +13,8 @@ function Home() {
 
   return (
     <div>
-        <Container fluid>
-      <Row>
         <Navbar />
-      </Row>
-      <Row>
         <Banner />
-      </Row>
-    </Container>
         <MostPopular/>
         <GamesCarousel/>
         <Encuesta/>

@@ -1,30 +1,39 @@
 @import url("../../../index.css");
 
 
+/* .banner-container{
+  width: 100%;
+  height: auto;
+  margin-top: 104px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .banner {
-  height: 400px; /* Set the height to 100 viewport height */
-  margin-top:105px;
+  width: 100%;
+  height: fit-content;
   background-size: cover; /* Make the background image cover the entire container */
-  background-position: center; /* Center the background image */
-  display: flex; /* Make the container a flex container */
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
+  /* background-position: center; 
   background-image: url("../../../assets/banners/Banner1200.png");
+} */
+
+.banner {
+  position: relative;
+  color: white;
+  text-align: center;
 }
 
-/* Add media queries to make the image responsive */
+.banner-image {
+  margin-top: 104px;
+  width: 100%;
+  height: auto;
+}
 
-@media only screen and (max-width: 1300px) {
-  .banner {
-    background-image: url("../../../assets/banners/Banner1900.png");
-  }
+@media (max-width: 1200px){
 }
-@media only screen and (max-width: 700px) {
-  .banner {
-    background-image: url("../../../assets/banners/Banner1080.png");
-  }
-}
+
+
 
 
 
