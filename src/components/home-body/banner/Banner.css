@@ -10,7 +10,7 @@
   display: flex; /* Make the container a flex container */
   justify-content: center; /* Center the content horizontally */
   align-items: center; /* Center the content vertically */
-  background-image: url("../../../assets/banners/Banner1200.png");
+  background-image: url("../../../assets/banners/Banner1900.png");
 }
 
 /* Add media queries to make the image responsive */
@@ -20,7 +20,7 @@
     background-image: url("../../../assets/banners/Banner1900.png");
   }
 }
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1090px) {
   .banner {
     background-image: url("../../../assets/banners/Banner1080.png");
   }
