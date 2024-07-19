@@ -18,7 +18,7 @@ const fetcher = (url) =>
 
 function useFetchFree() {
   const { data, error } = useSWR(
-    `https://free-to-play-games-database.p.rapidapi.com/api/games`,
+    `https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=relevance`,
     fetcher
   );
 

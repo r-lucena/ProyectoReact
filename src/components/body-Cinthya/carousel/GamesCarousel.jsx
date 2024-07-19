@@ -1,40 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CarouselImages from "./CarouselImages";
 import useFetchFree from "../../Fetch-freeToGame/useFetchFree";
+import "./GamesCarousel.css";
+
 function GamesCarousel() {
   const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
+  const [newGames, setNewGames] = useState([]);
+  function handleSelect(selectedIndex) {
     setIndex(selectedIndex);
-  };
+  }
 
   const { data, error, isLoading } = useFetchFree();
 
-   // Selecciona 3 juegos al azar
-   function selectRandomGames (games, num) {
-    const shuffled = games.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, num);
-  }
+  useEffect(() => {
+    if (data) {
+      const sortedGames= data.sort((a, b)=> new Date(b.release_date) - new Date(a.release_date))
+      const threeNewestGames = sortedGames.slice(0,3)
+      setNewGames(threeNewestGames)
+    }
 
-  const randomGames = data ? selectRandomGames(data, 3) : [];
+  }, [data]);
+
 
   return (
-    <div>
-      <h1>Enjoy your games !</h1>
-    <Carousel activeIndex={index} onSelect={handleSelect}>
-      {randomGames && ( randomGames.map((game)=>(
-        <Carousel.Item key={game.id}>
-        <CarouselImages text={game.title} imageUrl={game.thumbnail} />
-        <Carousel.Caption>
-          <h3>{game.short_description}</h3>
-        </Carousel.Caption>
-      </Carousel.Item>
-      ))
-        
-      )}
-    </Carousel>
+    <div className="game-div-wrapper">
+      <h1 className="game-title">New releases</h1>
+      <Carousel className="div-carousel-slide" activeIndex={index} onSelect={handleSelect}>
+        {newGames &&
+          newGames.map((game) => (
+            <Carousel.Item className="carousel-item-custom"
+              key={game.id}
+              onClick={() => window.open(game.game_url)}
+            >
+              <div className="carousel-background" style={{ backgroundImage: `url(${game.thumbnail})` }} ></div>
+              <CarouselImages className="carousel-caption" text={game.title} imageUrl={game.thumbnail} />
+            </Carousel.Item>
+          ))}
+      </Carousel>
+
+      {error && <p>Error:{error.message}</p>}
+      {isLoading && <p>Loading...</p>}
     </div>
   );
 }

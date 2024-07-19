@@ -1,94 +1,106 @@
-// import { useState, useEffect } from 'react';
-// import GameCard from './GameCard';
-// import useFetchFree from '../Fetch-freeToGame/useFetchFree'
-// import '../home-body/GameSearch.css'
-
-// function GameSearch() {
-//   const { data, error, isLoading } = useFetchFree(); // Use the custom hook
-//   const [randomGames, setRandomGames] = useState([]);
-//   const [input, setInput] = useState("")
-
-//   function handleInput(event) {
-//     console.log(event.target.value);
-//     setInput(event.target.value)
-//   }
-
-//   useEffect(() => {
-//     if (data) {
-//       const generateRandomGames = () => {
-//         const randomGames = data.sort(() => Math.random() - 0.5).slice(0, 8);
-//         setRandomGames(randomGames);
-//       };
-//       generateRandomGames();
-//     }
-//   }, [data]);
-
-
-//   if (isLoading) {
-//     return <div>Loading...</div>;
-//   }
-
-//   if (error) {
-//     return <div>Error: {error.message}</div>;
-//   }
-
-//   return (
-//     <div>
-//       <label htmlFor="game-search"><h1 className="recomendations-p">Search your games!</h1></label>
-//       <input name='game-search' type='text' placeholder='type here' onChange={handleInput} />
-//       <div className="game-cards">
-//         {input && data.map(element => (
-//           <GameCard key={element.id} game={element.title == input} />
-//         ))}
-//           {/* {data && randomGames.map(game => (
-//             <GameCard key={game.id} game={game} />
-//           ))} */}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default GameSearch;
-
-import { useState, useEffect } from 'react';
-import GameCard from './GameCard';
-import useFetchFree from '../Fetch-freeToGame/useFetchFree';
-import '../home-body/GameSearch.css';
-import BasicDropdown from '../../components-victor/dropdown/BasicDropdown'
+import { useState, useEffect } from "react";
+import GameCard from "./GameCard";
+import useFetchFree from "../../components/Fetch-freeToGame/useFetchFree";
+import "../home-body/GameSearch.css";
+import BasicDropdown from "../../components-victor/dropdown/BasicDropdown";
 
 function GameSearch() {
   const { data = [], error, isLoading } = useFetchFree(); // Ensure data is always an array
   const [randomGames, setRandomGames] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [genres, setGenres] = useState([]);
+  const [page, setPage] = useState(0);
+  const [numOfPages, setNumOfPages] = useState([]);
+  const [selectedGenre, setSelectedGenre] = useState("");
 
-  function handleSearchQuery(e){
-    setSearchQuery(e.target.value)
+  function handleSearchQuery(e) {
+    setSearchQuery(e.target.value);
+  }
+  function generateRandomGames() {
+    const randomGames = data.sort(() => Math.random() - 0.5).slice(0, 12);
+    setRandomGames(randomGames);
   }
 
-  useEffect(() => {
-    console.log('Fetched Data:', data); // Log the fetched data
+  function populateDropdown() {
     if (data.length > 0) {
-      const generateRandomGames = () => {
-        const randomGames = data.sort(() => Math.random() - 0.5).slice(0, 8);
-        setRandomGames(randomGames);
-      };
+      const differentGenres = [...new Set(data.map((game) => game.genre))]; // Extraer géneros únicos
+
+      const filterDifferentGenres = differentGenres.map((genre) => ({
+        item: genre,
+        value: genre.toLowerCase(),
+      })); // Formatear géneros
+
+      setGenres(filterDifferentGenres);
+    }
+  }
+  useEffect(() => {
+    if (data.length > 0) {
+      console.log("Fetched Data:", data); // Log the fetched data
+
       generateRandomGames();
+      populateDropdown();
     }
   }, [data]);
 
+  function handleDropdown(e) {
+    setSelectedGenre(e.target.innerText);
+    console.log(selectedGenre);
+  }
+
+  function handleReset(){
+    setSelectedGenre("");
+    setSearchQuery("");
+  }
+
+  // useEffect(() => {
+  //   if (selectedGenre) {
+  //     const gamesFilteredByGenre = data.filter(
+  //       (game) => game.genre === selectedGenre
+  //     );
+  //     setFilteredGamesByGenre(gamesFilteredByGenre);
+  //   }
+  //   console.log("Filtered Games:", filteredGamesByGenre);
+  // }, [selectedGenre, data]);
+
+
+  function divideArrayInParts(array, partSize) {
+    let result = [];
+    for (let i = 0; i < array.length; i += partSize) {
+      let part = array.slice(i, i + partSize);
+      result.push(part);
+    }
+    return result;
+  }
+
   useEffect(() => {
-    console.log('Search Query:', searchQuery); // Log the search query
-    if (data.length > 0 && searchQuery) {
-      const filteredGames = data.filter(game =>
+    let filteredGames = [];
+    if (searchQuery) {
+      console.log("Search Query:", searchQuery); // Log the search query
+      filteredGames = data.filter((game) =>
         game.title?.toLowerCase().includes(searchQuery.toLowerCase())
       );
-      console.log('Filtered Games:', filteredGames); // Log the filtered results
-      setSearchResults(filteredGames);
-    } else {
-      setSearchResults([]);
+      console.log("Filtered Games:", filteredGames); // Log the filtered results
+    } else if (selectedGenre) {
+      filteredGames = data.filter(
+        (game) => game.genre === selectedGenre
+      )
     }
-  }, [searchQuery, data]);
+    const pagination = divideArrayInParts(filteredGames, 12);
+    setSearchResults(pagination);
+
+    const arrayOfPages = Array.from(
+      { length: pagination.length },
+      (_, i) => i
+    );
+    setNumOfPages(arrayOfPages);
+    setPage(0); // Reset to the first page on new search
+
+  }, [searchQuery, selectedGenre, data]); // Depende de searchQuery y data
+
+  useEffect(() => {
+    console.log(genres);
+  }, [genres]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -98,35 +110,55 @@ function GameSearch() {
     return <div>Error: {error.message}</div>;
   }
 
+  function handlePage(event) {
+    setPage(Number(event.target.innerText));
+  }
+
   return (
     <div>
-      <label htmlFor="game-search"><h1 className="recomendations-p">Search your games!</h1></label>
+      <label htmlFor="game-search">
+        <h1 className="recomendations-p">Search your games!</h1>
+      </label>
       <input
-        id='game-search'
+        id="game-search"
         type="text"
         value={searchQuery}
         onChange={handleSearchQuery}
         placeholder="Search for a game..."
         className="search-input"
       />
-      {/* <BasicDropdown btnName={"Genres"} objectsArray={data.genre}/> */}
+      {genres.length ? (
+        <BasicDropdown
+          btnName={"Genres"}
+          objectsArray={genres}
+          handleOnClick={handleDropdown}
+        />
+      ) : null}
+      <button onClick={handleReset}>Reset</button>
       <div className="game-card">
-        {searchQuery ? (
+        {searchQuery || selectedGenre ? (
           searchResults.length ? (
-            searchResults.map(game => (
+            searchResults[page].map((game) => (
               <GameCard key={game.id} game={game} />
             ))
           ) : (
-            <p className='nogame-found'><b>Woops! There isn't any game with that name!</b></p>
+            <div>No results found</div>
           )
         ) : (
-          randomGames.map(game => (
-            <GameCard key={game.id} game={game} />
-          ))
-        )}
+          randomGames.map((game) => <GameCard key={game.id} game={game} />)
+        )
+        }
+
+        {numOfPages.map((page, index) => {
+          return (
+            <button onClick={handlePage} key={index}>
+              {page}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
-};
+}
 
 export default GameSearch;

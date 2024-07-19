@@ -2,34 +2,41 @@
 .game-card-style {
   display: flex;
   align-items: center;
-  justify-content: center;
+  
   align-content: center;
   flex-wrap: wrap;
   flex-direction: column;
   border-radius: 15px;
   background-color: var(--fern-green);
   width: 400px;
-  margin: 20px
+  margin: 20px;
   
 }
-.game-card-style img {
-  margin: 20px
-}
+
 .game-card{
   background-color: transparent;
     
 }
 .card-img {
-  width: 365px;
-  height: 206px;
+  width: 360px;
+  height: 200px;
   display: flex;
   justify-content: center;
+  margin: 10px;
 }
 .card-title {
   display: flex;
   justify-content: center;
+  color: white;
+}
+.card-title h2 {
+  font-size: 25px;
 }
 .card-texts {
   margin: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
 }
 

@@ -1,6 +1,9 @@
-function CarouselImages({ text, imageUrl }) {
+import "./GamesCarousel.css";
+
+function CarouselImages({ text, imageUrl}) {
+
   return (
-    <div>
+    <div className="carousel-img-wrapper">
       <img src={imageUrl} alt={text} />
     </div>
   );
@@ -8,22 +11,3 @@ function CarouselImages({ text, imageUrl }) {
 
 export default CarouselImages;
 
-
-
-
-// <Carousel.Item>
-//         <ExampleCarouselImage text="Second slide" />
-//         <Carousel.Caption>
-//           <h3>Second slide label</h3>
-//           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-//         </Carousel.Caption>
-//       </Carousel.Item>
-//       <Carousel.Item>
-//         <ExampleCarouselImage text="Third slide" />
-//         <Carousel.Caption>
-//           <h3>Third slide label</h3>
-//           <p>
-//             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-//           </p>
-//         </Carousel.Caption>
-//       </Carousel.Item>
