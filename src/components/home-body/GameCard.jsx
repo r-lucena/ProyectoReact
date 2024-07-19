@@ -2,11 +2,13 @@ import '../home-body/GameCard.css'
 const GameCard = ({ game }) => {
   return (
     <div className="game-card-style">
-    <img
-        src={game.thumbnail}
-        alt={game.title}
-        onClick={() => window.open(game.game_url)}
-    />
+    <div className="img-container">
+      <img
+          src={game.thumbnail}
+          alt={game.title}
+          onClick={() => window.open(game.game_url)}
+      />
+    </div>
     <h2 onClick={() => window.open(game.game_url)}>
         {game.title}
     </h2>

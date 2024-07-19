@@ -115,7 +115,7 @@ function GameSearch() {
   }
 
   return (
-    <div>
+    <div className="game-search-container">
       <label htmlFor="game-search">
         <h1 className="recomendations-p">Search your games!</h1>
       </label>
