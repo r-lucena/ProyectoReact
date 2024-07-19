@@ -5,6 +5,16 @@
     border-radius: 20px;
     
 }
+.no-results {
+    background-color: var(--fern-green);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    display: flex;
+}
+.no-results p {
+    margin: 10px;
+}
 
 
 @media (min-width: 1px)  {
