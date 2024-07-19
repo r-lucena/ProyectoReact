@@ -25,6 +25,10 @@
     gap: 1rem;
 }
 
+.btn-wrapper{
+    display: flex;
+    gap: 0.5rem
+}
 
 .search-input {
     align-self: center;
@@ -137,7 +141,7 @@
 }
 
 /* Mobile view */
-@media (max-width: 576px) {
+@media (max-width: 420px) {
     .search-title {
         margin: 0;
     }
@@ -153,6 +157,12 @@
     .funtionalities-wrapper {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn-wrapper{
+        gap:1rem
     }
 
 }

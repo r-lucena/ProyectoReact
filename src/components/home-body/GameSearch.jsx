@@ -128,16 +128,18 @@ function GameSearch() {
             className="search-input"
           />
 
-          {genres.length ? (
-            <BasicDropdown
-              btnName={"Genres"}
-              objectsArray={genres}
-              handleOnClick={handleDropdown}
-            />
-          ) : null}
-          <button className="reset-button" onClick={handleReset}>
-            Reset
-          </button>
+          <div className="btn-wrapper">
+            {genres.length ? (
+              <BasicDropdown
+                btnName={"Genres"}
+                objectsArray={genres}
+                handleOnClick={handleDropdown}
+              />
+            ) : null}
+            <button className="reset-button" onClick={handleReset}>
+              Reset
+            </button>
+          </div>
         </div>
       </div>
       <div className="game-card">
