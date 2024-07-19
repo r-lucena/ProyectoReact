@@ -1,10 +1,18 @@
 @import url("../../../index.css");
 
 
+/* .banner-container{
+  width: 100%;
+  height: auto;
+  margin-top: 104px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .banner {
-  height: 400px; /* Set the height to 100 viewport height */
-  margin-top:105px;
+  width: 100%;
+  height: fit-content;
   background-size: cover; /* Make the background image cover the entire container */
   background-position: center; /* Center the background image */
   display: flex; /* Make the container a flex container */
